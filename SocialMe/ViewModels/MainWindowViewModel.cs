@@ -56,6 +56,7 @@ namespace SocialMe
             }
         }
         
+        //container for messages
         public IEnumerable<string> MessageHistory
         {
             get { return _messageHistory; }
@@ -67,6 +68,7 @@ namespace SocialMe
         }
         #endregion
         
+        //adds clients messages to the message container
         private void AddToMessageHistory()
         {
             _messageHistory.Add(ClientMessage);
