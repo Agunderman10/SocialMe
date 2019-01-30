@@ -9,8 +9,8 @@
              d:DesignWidth="450"
              d:DataContext="MainWindowViewModel">
     <StackPanel>
-        
-        <Label Margin="5,5,5,0" FontWeight="Bold">Your IP</Label>
+
+        <Label Margin="5,5,5,0" FontWeight="Bold">My IP</Label>
         
         <Border BorderBrush="Black" BorderThickness="1" Margin="5,0,5,5">
             <TextBlock Text="127.0.0"/>
@@ -19,7 +19,7 @@
         <Label Margin="5,5,5,0" FontWeight="Bold">Their IP</Label>
         <TextBox Text="{Binding TheirIP}" Margin="5,0,5,5"/>
 
-        <ListBox ItemsSource="{Binding MessageHistory}" Height="200" Margin="5"/>
+        <ListBox ItemsSource="{Binding MessageHistory}" Height="250" Margin="5"/>
 
         <Label Margin="5,5,5,0" FontWeight="Bold">Your Message</Label>
         <TextBox Text="{Binding UserMessage, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
