@@ -51,6 +51,7 @@ namespace SocialMe
                 if (this._clientMessage != value)
                 {
                     this._clientMessage = value;
+                    OnPropertyChanged(nameof(ClientMessage));
                 }
             }
         }
@@ -69,6 +70,14 @@ namespace SocialMe
         private void AddToMessageHistory()
         {
             _messageHistory.Add(ClientMessage);
+            ClientMessage = "";
         }
+        #region INotifyPropertyChanged
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void OnPropertyChanged(string propertyName)
+        {
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        #endregion
     }
 }
