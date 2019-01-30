@@ -80,7 +80,9 @@ namespace SocialMe
                 return;
             }
 
-            _messageHistory.Add(ClientMessage);
+            //adds Me> prefix to messages
+            string message = "Me> " + ClientMessage;
+            _messageHistory.Add(message);
             ClientMessage = "";
         }
         #endregion
