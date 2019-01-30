@@ -20,8 +20,10 @@ namespace SocialMe
     /// </summary>
     public partial class MainWindow : Window
     {
+        MainWindowViewModel MainWindowViewModel = new MainWindowViewModel();
         public MainWindow()
         {
+            this.DataContext = MainWindowViewModel;
             InitializeComponent();
         }
     }
