@@ -19,6 +19,7 @@ namespace SocialMe
 
         #endregion
         #region Public Properties
+        //the user's IP
         public string ClientIP
         {
             get { return this._clientIP; }
@@ -31,6 +32,7 @@ namespace SocialMe
             }
         }
 
+        //the other messender's IP
         public string ServerIP
         {
             get { return this._serverIP; }
@@ -43,6 +45,7 @@ namespace SocialMe
             }
         }
 
+        //message that the user sends
         public string ClientMessage
         {
             get { return this._clientMessage; }
@@ -67,7 +70,7 @@ namespace SocialMe
             get { return new ButtonCommands(AddToMessageHistory); }
         }
         #endregion
-        
+        #region Private Methods
         //adds clients messages to the message container
         private void AddToMessageHistory()
         {
@@ -80,6 +83,7 @@ namespace SocialMe
             _messageHistory.Add(ClientMessage);
             ClientMessage = "";
         }
+        #endregion
         #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
         private void OnPropertyChanged(string propertyName)
