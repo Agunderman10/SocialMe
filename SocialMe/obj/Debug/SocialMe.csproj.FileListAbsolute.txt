@@ -1,0 +1,15 @@
+C:\Users\Andrew Gunderman\Desktop\Code\Visual Studio\SocialMe\SocialMe\bin\Debug\SocialMe.exe.config
+C:\Users\Andrew Gunderman\Desktop\Code\Visual Studio\SocialMe\SocialMe\bin\Debug\SocialMe.exe
+C:\Users\Andrew Gunderman\Desktop\Code\Visual Studio\SocialMe\SocialMe\bin\Debug\SocialMe.pdb
+C:\Users\Andrew Gunderman\Desktop\Code\Visual Studio\SocialMe\SocialMe\obj\Debug\SocialMe.csprojAssemblyReference.cache
+C:\Users\Andrew Gunderman\Desktop\Code\Visual Studio\SocialMe\SocialMe\obj\Debug\MainWindow.g.cs
+C:\Users\Andrew Gunderman\Desktop\Code\Visual Studio\SocialMe\SocialMe\obj\Debug\App\App.g.cs
+C:\Users\Andrew Gunderman\Desktop\Code\Visual Studio\SocialMe\SocialMe\obj\Debug\SocialMe_MarkupCompile.cache
+C:\Users\Andrew Gunderman\Desktop\Code\Visual Studio\SocialMe\SocialMe\obj\Debug\SocialMe_MarkupCompile.lref
+C:\Users\Andrew Gunderman\Desktop\Code\Visual Studio\SocialMe\SocialMe\obj\Debug\MainWindow.baml
+C:\Users\Andrew Gunderman\Desktop\Code\Visual Studio\SocialMe\SocialMe\obj\Debug\SocialMe.g.resources
+C:\Users\Andrew Gunderman\Desktop\Code\Visual Studio\SocialMe\SocialMe\obj\Debug\SocialMe.Properties.Resources.resources
+C:\Users\Andrew Gunderman\Desktop\Code\Visual Studio\SocialMe\SocialMe\obj\Debug\SocialMe.csproj.GenerateResource.cache
+C:\Users\Andrew Gunderman\Desktop\Code\Visual Studio\SocialMe\SocialMe\obj\Debug\SocialMe.csproj.CoreCompileInputs.cache
+C:\Users\Andrew Gunderman\Desktop\Code\Visual Studio\SocialMe\SocialMe\obj\Debug\SocialMe.exe
+C:\Users\Andrew Gunderman\Desktop\Code\Visual Studio\SocialMe\SocialMe\obj\Debug\SocialMe.pdb
