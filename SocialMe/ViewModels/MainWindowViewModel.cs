@@ -71,6 +71,12 @@ namespace SocialMe
         //adds clients messages to the message container
         private void AddToMessageHistory()
         {
+            //if client message is empty don't add empty space to message history
+            if(string.IsNullOrWhiteSpace(ClientMessage))
+            {
+                return;
+            }
+
             _messageHistory.Add(ClientMessage);
             ClientMessage = "";
         }
