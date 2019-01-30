@@ -8,6 +8,10 @@
              d:DesignHeight="600" 
              d:DesignWidth="450"
              d:DataContext="MainWindowViewModel">
+    <UserControl.InputBindings>
+        <KeyBinding Key="Enter" Command="{Binding AddToMessageHistoryCommand}"/>
+    </UserControl.InputBindings>
+        
     <StackPanel>
 
         <Label Margin="5,5,5,0" FontWeight="Bold">My IP</Label>
