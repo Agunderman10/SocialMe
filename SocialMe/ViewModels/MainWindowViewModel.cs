@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Net;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -12,7 +14,6 @@ namespace SocialMe
     class MainWindowViewModel : INotifyPropertyChanged
     {
         #region Private Members
-        private string _clientIP;
         private string _serverIP;
         private string _clientMessage = "Type Something...";
         private readonly ObservableCollection<string> _messageHistory = new ObservableCollection<string>();
@@ -22,14 +23,7 @@ namespace SocialMe
         //the user's IP
         public string ClientIP
         {
-            get { return this._clientIP; }
-            set
-            {
-                if (this._clientIP != value)
-                {
-                    this._clientIP = value;
-                }
-            }
+            get { return GetLocalIPAddress(); }
         }
 
         //the other messender's IP
@@ -71,6 +65,20 @@ namespace SocialMe
         }
         #endregion
         #region Private Methods
+        //get local ip address
+        private string GetLocalIPAddress()
+        {
+            var host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach(var ipAddress in host.AddressList)
+            {
+                if(ipAddress.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    return ipAddress.ToString();
+                }
+            }
+            throw new Exception("Unknown IP Address!");
+        }
+
         //adds clients messages to the message container
         private void AddToMessageHistory()
         {
