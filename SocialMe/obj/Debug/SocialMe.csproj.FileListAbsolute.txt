@@ -13,3 +13,6 @@ C:\Users\Andrew Gunderman\Desktop\Code\Visual Studio\SocialMe\SocialMe\obj\Debug
 C:\Users\Andrew Gunderman\Desktop\Code\Visual Studio\SocialMe\SocialMe\obj\Debug\SocialMe.csproj.CoreCompileInputs.cache
 C:\Users\Andrew Gunderman\Desktop\Code\Visual Studio\SocialMe\SocialMe\obj\Debug\SocialMe.exe
 C:\Users\Andrew Gunderman\Desktop\Code\Visual Studio\SocialMe\SocialMe\obj\Debug\SocialMe.pdb
+C:\Users\Andrew Gunderman\Desktop\Code\Visual Studio\SocialMe\SocialMe\obj\Debug\Views\MainWindowUserControl.g.cs
+C:\Users\Andrew Gunderman\Desktop\Code\Visual Studio\SocialMe\SocialMe\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Andrew Gunderman\Desktop\Code\Visual Studio\SocialMe\SocialMe\obj\Debug\Views\MainWindowUserControl.baml
