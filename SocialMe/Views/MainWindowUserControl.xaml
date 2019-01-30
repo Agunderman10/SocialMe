@@ -30,7 +30,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Button Background="Firebrick" Margin="5,5,5,5" Grid.Column="1">Send</Button>
+            <Button Command="{Binding AddToMessageHistoryCommand}" Background="Firebrick" Margin="5,5,5,5" Grid.Column="1">Send</Button>
         </Grid>
 
     </StackPanel>

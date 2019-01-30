@@ -1,19 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace SocialMe
 {
-    class MainWindowViewModel
+    class MainWindowViewModel : INotifyPropertyChanged
     {
         #region Private Members
         private string _clientIP;
         private string _serverIP;
         private string _clientMessage = "Type Something...";
         private readonly ObservableCollection<string> _messageHistory = new ObservableCollection<string>();
+
         #endregion
         #region Public Properties
         public string ClientIP
@@ -51,11 +54,21 @@ namespace SocialMe
                 }
             }
         }
-
+        
         public IEnumerable<string> MessageHistory
         {
             get { return _messageHistory; }
         }
+
+        public ICommand AddToMessageHistoryCommand
+        {
+            get { return new ButtonCommands(AddToMessageHistory); }
+        }
         #endregion
+        
+        private void AddToMessageHistory()
+        {
+            _messageHistory.Add(ClientMessage);
+        }
     }
 }
