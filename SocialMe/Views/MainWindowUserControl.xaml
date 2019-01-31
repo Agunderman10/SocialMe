@@ -15,13 +15,42 @@
     <StackPanel>
 
         <Label Margin="5,5,5,0" FontWeight="Bold">My IP</Label>
-        
         <Border BorderBrush="Black" BorderThickness="1" Margin="5,0,5,5">
             <TextBlock Text="{Binding ClientIP}"/>
         </Border>
 
+        <Label Margin="5,5,5,0" FontWeight="Bold">My Port</Label>
+        <Border BorderBrush="Black" BorderThickness="1" Margin="5,0,5,5">
+            <TextBox Text="{Binding ClientPort}"/>
+        </Border>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button Command="{Binding StartCommand}" Background="LightGray" Margin="5,5,5,5" Grid.Column="1">Start</Button>
+        </Grid>
+        
         <Label Margin="5,5,5,0" FontWeight="Bold">Their IP</Label>
-        <TextBox Text="{Binding ServerIP}" Margin="5,0,5,5"/>
+        <Border BorderBrush="Black" BorderThickness="1" Margin="5,5,5,0">
+            <TextBox Text="{Binding ServerIP}"/>
+        </Border>
+
+        <Label Margin="5,5,5,0" FontWeight="Bold">Their Port</Label>
+        <Border BorderBrush="Black" BorderThickness="1" Margin="5,0,5,5">
+            <TextBox Text="{Binding ServerPort}"/>
+        </Border>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button Command="{Binding ConnectCommand}" Background="LightGray" Margin="5,5,5,5" Grid.Column="1">Connect</Button>
+        </Grid>
 
         <ListBox ItemsSource="{Binding MessageHistory}" Height="250" Margin="5"/>
 
