@@ -11,16 +11,31 @@
     class MainWindowViewModel : INotifyPropertyChanged
     {
         #region Private Members
+        private string _userDefinedPort;
         private string _serverIP;
-        private string _clientMessage = "Type Something...";
+        private string _serverPort;
+        private string _userMessage = "Type Something...";
         private readonly ObservableCollection<string> _messageHistory = new ObservableCollection<string>();
 
         #endregion
         #region Public Properties
         //the user's IP
-        public string ClientIP
+        public string UserIP
         {
             get { return GetLocalIPAddress(); }
+        }
+
+        //the port the user defines
+        public string UserDefinedPort
+        {
+            get { return this._userDefinedPort; }
+            set
+            {
+                if(this._userDefinedPort != value)
+                {
+                    this._userDefinedPort = value;
+                }
+            }
         }
 
         //the other messender's IP
@@ -36,16 +51,28 @@
             }
         }
 
-        //message that the user sends
-        public string ClientMessage
+        public string ServerPort
         {
-            get { return this._clientMessage; }
+            get { return this._serverPort; }
             set
             {
-                if (this._clientMessage != value)
+                if(this._serverPort != value)
                 {
-                    this._clientMessage = value;
-                    OnPropertyChanged(nameof(ClientMessage));
+                    this._serverPort = value;
+                }
+            }
+        }
+
+        //message that the user sends
+        public string UserMessage
+        {
+            get { return this._userMessage; }
+            set
+            {
+                if (this._userMessage != value)
+                {
+                    this._userMessage = value;
+                    OnPropertyChanged(nameof(UserMessage));
                 }
             }
         }
@@ -80,15 +107,15 @@
         private void AddToMessageHistory()
         {
             //if client message is empty don't add empty space to message history
-            if(string.IsNullOrWhiteSpace(ClientMessage))
+            if(string.IsNullOrWhiteSpace(UserMessage))
             {
                 return;
             }
 
             //adds Me> prefix to messages
-            string message = "Me> " + ClientMessage;
+            string message = "Me> " + UserMessage;
             _messageHistory.Add(message);
-            ClientMessage = string.Empty;
+            UserMessage = string.Empty;
         }
         #endregion
         #region INotifyPropertyChanged
