@@ -88,7 +88,7 @@
             //adds Me> prefix to messages
             string message = "Me> " + ClientMessage;
             _messageHistory.Add(message);
-            ClientMessage = "";
+            ClientMessage = string.Empty;
         }
         #endregion
         #region INotifyPropertyChanged
