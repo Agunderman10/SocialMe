@@ -9,7 +9,8 @@
         ResizeMode="NoResize"
         MinWidth="450"
         SizeToContent="WidthAndHeight"
-        Title="MainWindow">
+        Title="MainWindow"
+        WindowStartupLocation="CenterScreen">
 
     <Views:MainWindowUserControl/>
     
