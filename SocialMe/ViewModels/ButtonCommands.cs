@@ -1,8 +1,8 @@
-﻿using System;
-using System.Windows.Input;
-
-namespace SocialMe
+﻿namespace SocialMe
 {
+    using System;
+    using System.Windows.Input;
+
     class ButtonCommands : ICommand
     {
         private readonly Action _action; 

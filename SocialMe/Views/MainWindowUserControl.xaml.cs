@@ -1,7 +1,7 @@
-﻿using System.Windows.Controls;
-
-namespace SocialMe.Views
+﻿namespace SocialMe.Views
 {
+    using System.Windows.Controls;
+
     /// <summary>
     /// Interaction logic for MainWindowUserControl.xaml
     /// </summary>

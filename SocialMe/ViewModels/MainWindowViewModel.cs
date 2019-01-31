@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Net;
-using System.Net.Sockets;
-using System.Windows.Input;
-
-namespace SocialMe
+﻿namespace SocialMe
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using System.ComponentModel;
+    using System.Net;
+    using System.Net.Sockets;
+    using System.Windows.Input;
+
     class MainWindowViewModel : INotifyPropertyChanged
     {
         #region Private Members
