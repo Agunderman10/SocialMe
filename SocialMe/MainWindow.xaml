@@ -9,7 +9,7 @@
         ResizeMode="NoResize"
         MinWidth="450"
         SizeToContent="WidthAndHeight"
-        Title="MainWindow"
+        Title="SocialMe"
         WindowStartupLocation="CenterScreen">
 
     <Views:MainWindowUserControl/>
