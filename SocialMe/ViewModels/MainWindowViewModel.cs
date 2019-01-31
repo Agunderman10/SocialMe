@@ -38,7 +38,7 @@
             }
         }
 
-        //the other messender's IP
+        //the other messenger's IP
         public string ServerIP
         {
             get { return this._serverIP; }
@@ -51,6 +51,7 @@
             }
         }
 
+        //the server's port
         public string ServerPort
         {
             get { return this._serverPort; }
