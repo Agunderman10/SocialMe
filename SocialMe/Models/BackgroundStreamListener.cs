@@ -1,8 +1,8 @@
-﻿using System.Net.Sockets;
-using System.Text;
-
-namespace SocialMe
+﻿namespace SocialMe
 {
+    using System.Net.Sockets;
+    using System.Text;
+
     class BackgroundStreamListener
     {
         public void RunListener(TcpClient _client, MainWindowViewModel _mainWindowViewModel)
