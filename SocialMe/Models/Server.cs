@@ -48,6 +48,7 @@
             else
             {
                 netStream.Close();
+                return;
             }
         }
         #endregion
