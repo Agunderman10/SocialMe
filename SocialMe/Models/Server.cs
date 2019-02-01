@@ -7,17 +7,23 @@
 
     class Server
     {
+        #region Private Members
         private string _ipAddress;
         private string _message;
         private string _port;
-
+        #endregion
+        #region Constructors
         public Server(string ipAddress, string message, string port)
         {
             this._ipAddress = ipAddress;
             this._message = message;
             this._port = port;
         }
+        #endregion
+        #region Public Properties
 
+        #endregion
+        #region Public Methods
         //start the server and listen for data
         public void StartServer()
         {
@@ -40,5 +46,6 @@
                 return;
             }
         }
+        #endregion
     }
 }

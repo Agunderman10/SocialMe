@@ -88,6 +88,11 @@
         {
             get { return new ButtonCommands(AddToMessageHistory); }
         }
+
+        public ICommand StartServerCommand
+        {
+            get { return new ButtonCommands(StartServer); }
+        }
         #endregion
         #region Public Methods
         public void IsConnected()
@@ -123,6 +128,12 @@
             string message = "Me> " + UserMessage;
             _messageHistory.Add(message);
             UserMessage = string.Empty;
+        }
+
+        private void StartServer()
+        {
+            Server server = new Server(ServerIP, UserMessage,UserDefinedPort);
+            server.StartServer();
         }
 
         #endregion
