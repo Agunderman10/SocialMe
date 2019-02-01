@@ -10,8 +10,6 @@
         {
             NetworkStream netStream = _client.GetStream();
 
-            while (_client.Connected)
-            {
                 if (netStream.CanRead)
                 {
                     byte[] bytes = new byte[_client.ReceiveBufferSize];
@@ -27,7 +25,7 @@
                     netStream.Close();
                     return;
                 }
-            }
+            
         }
     }
 }
