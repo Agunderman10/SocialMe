@@ -7,11 +7,11 @@
 
     class Server
     {
-        private IPAddress _ipAddress;
+        private string _ipAddress;
         private string _message;
         private string _port;
 
-        public Server(IPAddress ipAddress, string message, string port)
+        public Server(string ipAddress, string message, string port)
         {
             this._ipAddress = ipAddress;
             this._message = message;
