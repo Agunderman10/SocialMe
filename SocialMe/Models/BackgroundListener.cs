@@ -1,0 +1,7 @@
+﻿namespace SocialMe
+{
+    class BackgroundListener
+    {
+
+    }
+}
