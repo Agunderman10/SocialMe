@@ -11,9 +11,9 @@
     class MainWindowViewModel : INotifyPropertyChanged
     {
         #region Private Members
-        private string _userDefinedPort;
-        private string _serverIP;
-        private string _serverPort;
+        private string _userDefinedPortForNewServer;
+        private string _connectingServerIP;
+        private string _connectingServerPort;
         private string _userMessage = "Type Something...";
         private readonly ObservableCollection<string> _messageHistory = new ObservableCollection<string>();
 
@@ -26,40 +26,40 @@
         }
 
         //the port the user defines
-        public string UserDefinedPort
+        public string UserDefinedPortForNewServer
         {
-            get { return this._userDefinedPort; }
+            get { return this._userDefinedPortForNewServer; }
             set
             {
-                if(this._userDefinedPort != value)
+                if(this._userDefinedPortForNewServer != value)
                 {
-                    this._userDefinedPort = value;
+                    this._userDefinedPortForNewServer = value;
                 }
             }
         }
 
         //the other messenger's IP
-        public string ServerIP
+        public string ConnectingServerIP
         {
-            get { return this._serverIP; }
+            get { return this._connectingServerIP; }
             set
             {
-                if (this._serverIP != value)
+                if (this._connectingServerIP != value)
                 {
-                    this._serverIP = value;
+                    this._connectingServerIP = value;
                 }
             }
         }
 
         //the server's port
-        public string ServerPort
+        public string ConnectingServerPort
         {
-            get { return this._serverPort; }
+            get { return this._connectingServerPort; }
             set
             {
-                if(this._serverPort != value)
+                if(this._connectingServerPort != value)
                 {
-                    this._serverPort = value;
+                    this._connectingServerPort = value;
                 }
             }
         }
@@ -132,7 +132,7 @@
 
         private void StartServer()
         {
-            Server server = new Server(ServerIP, UserMessage,UserDefinedPort);
+            Server server = new Server(ConnectingServerIP, UserMessage,UserDefinedPortForNewServer);
             server.StartServer();
         }
 

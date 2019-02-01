@@ -21,7 +21,7 @@
 
         <Label Margin="5,5,5,0" FontWeight="Bold">Server Port</Label>
         <Border BorderBrush="Black" BorderThickness="1" Margin="5,0,5,5">
-            <TextBox Text="{Binding UserDefinedPort, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Text="{Binding UserDefinedPortForNewServer, UpdateSourceTrigger=PropertyChanged}"/>
         </Border>
 
         <Grid>
@@ -35,12 +35,12 @@
         
         <Label Margin="5,5,5,0" FontWeight="Bold">Server IP</Label>
         <Border BorderBrush="Black" BorderThickness="1" Margin="5,5,5,0">
-            <TextBox Text="{Binding ServerIP, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Text="{Binding ConnectingServerIP, UpdateSourceTrigger=PropertyChanged}"/>
         </Border>
 
         <Label Margin="5,5,5,0" FontWeight="Bold">Server Port</Label>
         <Border BorderBrush="Black" BorderThickness="1" Margin="5,0,5,5">
-            <TextBox Text="{Binding ServerPort, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Text="{Binding ConnectingServerPort, UpdateSourceTrigger=PropertyChanged}"/>
         </Border>
 
         <Grid>
