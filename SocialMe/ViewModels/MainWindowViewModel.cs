@@ -104,6 +104,16 @@
         {
             _messageHistory.Add("Connected");
         }
+
+        public void DisplayMessage(string message)
+        {
+            _messageHistory.Add(message);
+        }
+
+        public void DisplayErrorMessage()
+        {
+            _messageHistory.Add("Error receiving message");
+        }
         #endregion
         #region Private Methods
         //get local ip address
@@ -138,7 +148,7 @@
         //starts the specified server
         private void StartServer()
         {
-            Server server = new Server(ConnectingServerIP, UserMessage,UserDefinedPortForNewServer);
+            Server server = new Server(ConnectingServerIP, UserMessage,UserDefinedPortForNewServer,this);
             server.StartServer();
         }
 

@@ -3,6 +3,7 @@
     using System;
     using System.Net;
     using System.Net.Sockets;
+    using System.Text;
     using System.Windows;
 
     class Client
@@ -32,6 +33,23 @@
                 if(client.Connected)
                 {
                     _mainWindowViewModel.IsConnected();
+                    NetworkStream netStream = client.GetStream();
+
+                    if(netStream.CanRead)
+                    {
+                        byte[] bytes = new byte[client.ReceiveBufferSize];
+                        netStream.Read(bytes, 0, (int)client.ReceiveBufferSize);
+
+                        string receivedMessage = Encoding.UTF8.GetString(bytes);
+                        _mainWindowViewModel.DisplayMessage(receivedMessage);
+                    }
+                    else
+                    {
+                        _mainWindowViewModel.DisplayErrorMessage();
+                        client.Close();
+                        netStream.Close();
+                        return;
+                    }
                 }
             }
             catch(Exception)
