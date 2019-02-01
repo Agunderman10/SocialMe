@@ -12,6 +12,9 @@
         private string _message;
         private string _port;
         private readonly MainWindowViewModel _mainWindowViewModel;
+        private TcpListener listener;
+        private Socket socket;
+        private NetworkStream netStream;
         #endregion
         #region Constructors
         public Server(string ipAddress, string message, string port, MainWindowViewModel mainWindowViewModel)
@@ -30,11 +33,11 @@
         public void StartServer()
         {
             //init and start new tcp listener, listening for any ip on the user specified port
-            TcpListener listener = new TcpListener(IPAddress.Any, int.Parse(_port)); //change ip later maybe
+            listener = new TcpListener(IPAddress.Any, int.Parse(_port)); //change ip later maybe
             listener.Start();
 
-            Socket socket = listener.AcceptSocket();
-            NetworkStream netStream = new NetworkStream(socket);
+            socket = listener.AcceptSocket();
+            netStream = new NetworkStream(socket);
             
             //if netstream can write to the network stream
             if(netStream.CanWrite)

@@ -11,6 +11,8 @@
         private string _ipAddress;
         private string _port;
         private readonly MainWindowViewModel _mainWindowViewModel;
+        private TcpClient client;
+        private IPEndPoint IpEndPoint;
 
         public Client(string ipAddress, string port, MainWindowViewModel mainWindowViewModel)
         {
@@ -22,8 +24,8 @@
 
         public void ConnectClient()
         {
-            TcpClient client = new TcpClient();
-            IPEndPoint IpEndPoint = new IPEndPoint(IPAddress.Parse(_ipAddress), int.Parse(_port));
+            client = new TcpClient();
+            IpEndPoint = new IPEndPoint(IPAddress.Parse(_ipAddress), int.Parse(_port));
 
             try
             {
