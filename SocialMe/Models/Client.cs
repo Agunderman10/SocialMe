@@ -37,7 +37,7 @@
                     _mainWindowViewModel.IsConnected();
 
                     BackgroundStreamListener backgroundStreamListener = new BackgroundStreamListener();
-                    backgroundStreamListener.RunListener(client, _mainWindowViewModel);
+                    backgroundStreamListener.RunMessageListener(client, _mainWindowViewModel);
                 }
             }
             catch(Exception)
