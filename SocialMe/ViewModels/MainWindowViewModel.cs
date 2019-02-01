@@ -89,6 +89,12 @@
             get { return new ButtonCommands(AddToMessageHistory); }
         }
         #endregion
+        #region Public Methods
+        public void IsConnected()
+        {
+            _messageHistory.Add("Connected");
+        }
+        #endregion
         #region Private Methods
         //get local ip address
         private string GetLocalIPAddress()
@@ -118,6 +124,7 @@
             _messageHistory.Add(message);
             UserMessage = string.Empty;
         }
+
         #endregion
         #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
