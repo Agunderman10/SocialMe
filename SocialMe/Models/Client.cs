@@ -35,28 +35,14 @@
                 if(client.Connected)
                 {
                     _mainWindowViewModel.IsConnected();
-                    NetworkStream netStream = client.GetStream();
 
-                    if(netStream.CanRead)
-                    {
-                        byte[] bytes = new byte[client.ReceiveBufferSize];
-                        netStream.Read(bytes, 0, (int)client.ReceiveBufferSize);
-
-                        string receivedMessage = Encoding.UTF8.GetString(bytes);
-                        _mainWindowViewModel.DisplayMessage(receivedMessage);
-                    }
-                    else
-                    {
-                        _mainWindowViewModel.DisplayErrorMessage();
-                        client.Close();
-                        netStream.Close();
-                        return;
-                    }
+                    BackgroundStreamListener backgroundStreamListener = new BackgroundStreamListener();
+                    backgroundStreamListener.RunListener(client, _mainWindowViewModel);
                 }
             }
             catch(Exception)
             {
-                MessageBox.Show("Cant connect");
+                MessageBox.Show("Can't connect");
             }
 
         }

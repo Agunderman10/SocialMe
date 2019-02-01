@@ -55,7 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Models\BackgroundListener.cs" />
+    <Compile Include="Models\BackgroundStreamListener.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\Server.cs" />
     <Compile Include="ViewModels\ButtonCommands.cs" />
