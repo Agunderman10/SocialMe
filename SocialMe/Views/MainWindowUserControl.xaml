@@ -9,7 +9,7 @@
              d:DesignWidth="450"
              d:DataContext="MainWindowViewModel">
     <UserControl.InputBindings>
-        <KeyBinding Key="Enter" Command="{Binding AddToMessageHistoryCommand}"/>
+        <KeyBinding Key="Enter" Command="{Binding SendMessageCommand}"/>
     </UserControl.InputBindings>
         
     <StackPanel>
@@ -63,7 +63,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Button Command="{Binding AddToMessageHistoryCommand}" Background="Firebrick" Margin="5,5,5,5" Grid.Column="1">Send</Button>
+            <Button Command="{Binding SendMessageCommand}" Background="Firebrick" Margin="5,5,5,5" Grid.Column="1">Send</Button>
         </Grid>
 
     </StackPanel>

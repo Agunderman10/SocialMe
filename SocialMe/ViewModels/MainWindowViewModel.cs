@@ -84,9 +84,9 @@
             get { return _messageHistory; }
         }
 
-        public ICommand AddToMessageHistoryCommand
+        public ICommand SendMessageCommand
         {
-            get { return new ButtonCommands(AddToMessageHistory); }
+            get { return new ButtonCommands(SendMessage); }
         }
 
         public ICommand StartServerCommand
@@ -131,7 +131,7 @@
         }
 
         //adds clients messages to the message container
-        private void AddToMessageHistory()
+        private void SendMessage()
         {
             //if client message is empty don't add empty space to message history
             if(string.IsNullOrWhiteSpace(UserMessage))
