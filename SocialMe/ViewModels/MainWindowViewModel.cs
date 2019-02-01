@@ -93,6 +93,11 @@
         {
             get { return new ButtonCommands(StartServer); }
         }
+
+        public ICommand ConnectToServerCommand
+        {
+            get { return new ButtonCommands(ConnectToServer); }
+        }
         #endregion
         #region Public Methods
         public void IsConnected()
@@ -130,10 +135,18 @@
             UserMessage = string.Empty;
         }
 
+        //starts the specified server
         private void StartServer()
         {
             Server server = new Server(ConnectingServerIP, UserMessage,UserDefinedPortForNewServer);
             server.StartServer();
+        }
+
+        //connects the client to the specified server
+        private void ConnectToServer()
+        {
+            Client client = new Client(ConnectingServerIP, ConnectingServerPort, this);
+            client.ConnectClient();
         }
 
         #endregion

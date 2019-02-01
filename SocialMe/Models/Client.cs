@@ -3,6 +3,7 @@
     using System;
     using System.Net;
     using System.Net.Sockets;
+    using System.Windows;
 
     class Client
     {
@@ -35,7 +36,7 @@
             }
             catch(Exception)
             {
-                return;
+                MessageBox.Show("Cant connect");
             }
 
         }
