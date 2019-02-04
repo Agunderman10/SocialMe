@@ -40,9 +40,9 @@
                     backgroundStreamListener.RunMessageListener(client, _mainWindowViewModel);
                 }
             }
-            catch(Exception)
+            catch(Exception e)
             {
-                MessageBox.Show("Can't connect");
+                MessageBox.Show(e.Message);
             }
 
         }
