@@ -37,6 +37,7 @@
             listener.Start();
 
             socket = listener.AcceptSocket();
+            _mainWindowViewModel.IsConnected();
             netStream = new NetworkStream(socket);
             
             //if netstream can write to the network stream
