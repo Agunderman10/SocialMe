@@ -16,7 +16,6 @@
         private string _connectingServerPort;
         private string _userMessage = "Type Something...";
         private readonly ObservableCollection<string> _messageHistory = new ObservableCollection<string>();
-
         #endregion
         #region Public Properties
         //the user's IP

@@ -39,9 +39,13 @@
             socket = listener.AcceptSocket();
             _mainWindowViewModel.IsConnected();
             netStream = new NetworkStream(socket);
-            
+            SendMessage();
+        }
+
+        public void SendMessage()
+        {
             //if netstream can write to the network stream
-            if(netStream.CanWrite)
+            if (netStream.CanWrite)
             {
                 Byte[] sendBytes = Encoding.UTF8.GetBytes(_message);
                 netStream.Write(sendBytes, 0, sendBytes.Length);
