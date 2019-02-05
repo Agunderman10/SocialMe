@@ -33,7 +33,7 @@
         public void StartServer()
         {
             //init and start new tcp listener, listening for any ip on the user specified port
-            listener = new TcpListener(IPAddress.Any, int.Parse(_port)); //change ip later maybe
+            listener = new TcpListener(IPAddress.Any, int.Parse(_port));
             listener.Start();
 
             socket = listener.AcceptSocket();
