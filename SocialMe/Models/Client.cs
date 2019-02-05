@@ -36,6 +36,7 @@
                 {
                     _mainWindowViewModel.IsConnected();
 
+                    //set background listener on background thread
                     BackgroundStreamListener backgroundStreamListener = new BackgroundStreamListener();
                     Thread thread = new Thread(() => backgroundStreamListener.RunMessageListener(client, _mainWindowViewModel));
                     thread.IsBackground = true;
