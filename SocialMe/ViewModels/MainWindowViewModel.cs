@@ -16,6 +16,7 @@
         private string _connectingServerPort;
         private string _userMessage = "Type Something...";
         private readonly ObservableCollection<string> _messageHistory = new ObservableCollection<string>();
+        private static Server server;
         #endregion
         #region Public Properties
         //the user's IP
@@ -141,13 +142,14 @@
             //adds Me> prefix to messages
             string message = "Me> " + UserMessage;
             _messageHistory.Add(message);
+            server.SendMessage();
             UserMessage = string.Empty;
         }
 
         //starts the specified server
         private void StartServer()
         {
-            Server server = new Server(ConnectingServerIP, UserMessage,UserDefinedPortForNewServer,this);
+            server = new Server(ConnectingServerIP, UserMessage,UserDefinedPortForNewServer,this);
             server.StartServer();
         }
 
