@@ -4,6 +4,7 @@
     using System.Net;
     using System.Net.Sockets;
     using System.Text;
+    using System.Threading;
     using System.Windows;
 
     class Client
@@ -21,7 +22,6 @@
             this._mainWindowViewModel = mainWindowViewModel;
         }
 
-
         public void ConnectClient()
         {
             client = new TcpClient();
@@ -37,7 +37,9 @@
                     _mainWindowViewModel.IsConnected();
 
                     BackgroundStreamListener backgroundStreamListener = new BackgroundStreamListener();
-                    backgroundStreamListener.RunMessageListener(client, _mainWindowViewModel);
+                    Thread thread = new Thread(() => backgroundStreamListener.RunMessageListener(client, _mainWindowViewModel));
+                    thread.IsBackground = true;
+                    thread.Start();
                 }
             }
             catch(Exception e)
