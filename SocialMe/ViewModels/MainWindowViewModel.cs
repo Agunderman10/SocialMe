@@ -107,7 +107,12 @@
 
         public void DisplayMessage(string message)
         {
-            _messageHistory.Add(message);
+            //puts delegate on UI dispatcher to avoid thread affinity runtime errors 
+            //when adding new element to Observable Collection from non-Dispatcher thread
+            App.Current.Dispatcher.Invoke((Action)delegate
+            {
+                _messageHistory.Add(message);
+            });
         }
 
         public void DisplayErrorMessage()
