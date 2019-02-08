@@ -111,7 +111,8 @@
             //when adding new element to Observable Collection from non-Dispatcher thread
             App.Current.Dispatcher.Invoke((Action)delegate
             {
-                _messageHistory.Add(message);
+                string shownMessage = "Your friend> " + message;
+                _messageHistory.Add(shownMessage);
             });
         }
 
