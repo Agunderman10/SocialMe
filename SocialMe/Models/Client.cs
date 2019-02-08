@@ -14,7 +14,7 @@
         private readonly MainWindowViewModel _mainWindowViewModel;
         private TcpClient client;
         private IPEndPoint IpEndPoint;
-
+        
         public Client(string ipAddress, string port, MainWindowViewModel mainWindowViewModel)
         {
             this._ipAddress = ipAddress;
