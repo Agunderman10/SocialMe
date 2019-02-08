@@ -8,7 +8,6 @@
     class Server
     {
         #region Private Members
-        private string _message;
         private string _port;
         private readonly MainWindowViewModel _mainWindowViewModel;
         private TcpListener listener;
@@ -16,9 +15,8 @@
         private NetworkStream netStream;
         #endregion
         #region Constructors
-        public Server(string message, string port, MainWindowViewModel mainWindowViewModel)
+        public Server(string port, MainWindowViewModel mainWindowViewModel)
         {
-            this._message = message;
             this._port = port;
             this._mainWindowViewModel = mainWindowViewModel;
         }
