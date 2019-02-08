@@ -14,7 +14,7 @@
         private string _userDefinedPortForNewServer;
         private string _connectingServerIP;
         private string _connectingServerPort;
-        private string _userMessage = "Type Something...";
+        private string _userMessage;
         private readonly ObservableCollection<string> _messageHistory = new ObservableCollection<string>();
         private Server server;
         #endregion
