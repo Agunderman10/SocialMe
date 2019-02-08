@@ -37,7 +37,6 @@
             socket = listener.AcceptSocket();
             _mainWindowViewModel.IsConnected();
             netStream = new NetworkStream(socket);
-            SendMessage();
         }
 
         public void SendMessage()
