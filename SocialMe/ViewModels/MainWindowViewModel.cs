@@ -154,7 +154,7 @@
         //starts the specified server
         private void StartServer()
         {
-            server = new Server(ConnectingServerIP, UserMessage, UserDefinedPortForNewServer, this);
+            server = new Server(UserMessage, UserDefinedPortForNewServer, this);
             server.StartServer();
         }
 

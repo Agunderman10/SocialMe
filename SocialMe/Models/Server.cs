@@ -8,7 +8,6 @@
     class Server
     {
         #region Private Members
-        private string _ipAddress;
         private string _message;
         private string _port;
         private readonly MainWindowViewModel _mainWindowViewModel;
@@ -17,9 +16,8 @@
         private NetworkStream netStream;
         #endregion
         #region Constructors
-        public Server(string ipAddress, string message, string port, MainWindowViewModel mainWindowViewModel)
+        public Server(string message, string port, MainWindowViewModel mainWindowViewModel)
         {
-            this._ipAddress = ipAddress;
             this._message = message;
             this._port = port;
             this._mainWindowViewModel = mainWindowViewModel;
