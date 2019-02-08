@@ -147,7 +147,7 @@
             //adds Me> prefix to messages
             string message = "Me> " + UserMessage;
             _messageHistory.Add(message);
-            server.SendMessage();
+            server.SendMessage(UserMessage);
             UserMessage = string.Empty;
         }
 

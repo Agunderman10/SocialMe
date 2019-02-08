@@ -39,7 +39,7 @@
             netStream = new NetworkStream(socket);
         }
 
-        public void SendMessage()
+        public void SendMessage(string _message)
         {
             //if netstream can write to the network stream
             if (netStream.CanWrite)
