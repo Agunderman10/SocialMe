@@ -39,12 +39,12 @@
             netStream = new NetworkStream(socket);
         }
 
-        public void SendMessage(string _message)
+        public void SendMessage(string message)
         {
             //if netstream can write to the network stream
             if (netStream.CanWrite)
             {
-                Byte[] sendBytes = Encoding.UTF8.GetBytes(_message);
+                Byte[] sendBytes = Encoding.UTF8.GetBytes(message);
                 netStream.Write(sendBytes, 0, sendBytes.Length);
             }
             else
