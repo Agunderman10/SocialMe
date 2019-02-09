@@ -150,36 +150,6 @@
             throw new Exception("Unknown IP Address!");
         }
 
-        //adds clients messages to the message container
-        private void SendMessage()
-        {
-            //if client message is empty don't add empty space to message history
-            if(string.IsNullOrWhiteSpace(UserMessage))
-            {
-                return;
-            }
-
-            //if the user sending the message is the server send message from server, if user sending message
-            //is client then send message from client
-            if(IsServer)
-            {
-                server.SendMessage(UserMessage);
-            }
-            else if(!IsServer)
-            {
-                client.SendMessage(UserMessage);
-            }
-            else
-            {
-                return;
-            }
-
-            //adds Me> prefix to messages
-            string message = "Me> " + UserMessage;
-            _messageHistory.Add(message);
-            UserMessage = string.Empty;
-        }
-
         //starts the specified server
         private void StartServer()
         {
@@ -198,6 +168,36 @@
 
             //set isserver to false so we can check this when sending messages later
             this.IsServer = false;
+        }
+
+        //adds clients messages to the message container
+        private void SendMessage()
+        {
+            //if client message is empty don't add empty space to message history
+            if (string.IsNullOrWhiteSpace(UserMessage))
+            {
+                return;
+            }
+
+            //if the user sending the message is the server send message from server, if user sending message
+            //is client then send message from client
+            if (IsServer)
+            {
+                server.SendMessage(UserMessage);
+            }
+            else if (!IsServer)
+            {
+                client.SendMessage(UserMessage);
+            }
+            else
+            {
+                return;
+            }
+
+            //adds Me> prefix to messages
+            string message = "Me> " + UserMessage;
+            _messageHistory.Add(message);
+            UserMessage = string.Empty;
         }
 
         #endregion
