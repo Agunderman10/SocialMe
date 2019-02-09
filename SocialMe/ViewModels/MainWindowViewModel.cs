@@ -15,6 +15,7 @@
         private string _connectingServerIP;
         private string _connectingServerPort;
         private string _userMessage;
+        private bool _isServer;
         private readonly ObservableCollection<string> _messageHistory = new ObservableCollection<string>();
         private Server server;
         #endregion
@@ -82,6 +83,11 @@
         public IEnumerable<string> MessageHistory
         {
             get { return _messageHistory; }
+        }
+
+        public bool IsServer
+        {
+            get { return this._isServer; }
         }
 
         public ICommand SendMessageCommand
