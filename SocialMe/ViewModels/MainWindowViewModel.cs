@@ -170,6 +170,8 @@
         {
             server = new Server(UserDefinedPortForNewServer, this);
             server.StartServer();
+
+            //set isserver to true so we can check this when sending messages later
             this.IsServer = true;
         }
 
@@ -178,6 +180,8 @@
         {
             Client client = new Client(ConnectingServerIP, ConnectingServerPort, this);
             client.ConnectClient();
+
+            //set isserver to false so we can check this when sending messages later
             this.IsServer = false;
         }
 
