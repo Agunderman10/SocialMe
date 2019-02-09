@@ -163,7 +163,7 @@
         //connects the client to the specified server
         private void ConnectToServer()
         {
-            Client client = new Client(ConnectingServerIP, ConnectingServerPort, this);
+            client = new Client(ConnectingServerIP, ConnectingServerPort, this);
             client.ConnectClient();
 
             //set isserver to false so we can check this when sending messages later
