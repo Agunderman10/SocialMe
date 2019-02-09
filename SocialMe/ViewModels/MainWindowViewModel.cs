@@ -159,6 +159,8 @@
                 return;
             }
 
+            //if the user sending the message is the server send message from server, if user sending message
+            //is client then send message from client
             if(IsServer)
             {
                 server.SendMessage(UserMessage);
