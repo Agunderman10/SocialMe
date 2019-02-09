@@ -18,6 +18,7 @@
         private bool _isServer;
         private readonly ObservableCollection<string> _messageHistory = new ObservableCollection<string>();
         private Server server;
+        private Client client;
         #endregion
         #region Public Properties
         //the user's IP
@@ -158,10 +159,18 @@
                 return;
             }
 
+            if(IsServer)
+            {
+                server.SendMessage(UserMessage);
+            }
+            else
+            {
+                client.SendMessage(UserMessage);
+            }
+
             //adds Me> prefix to messages
             string message = "Me> " + UserMessage;
             _messageHistory.Add(message);
-            server.SendMessage(UserMessage);
             UserMessage = string.Empty;
         }
 

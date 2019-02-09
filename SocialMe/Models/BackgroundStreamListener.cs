@@ -6,10 +6,8 @@
     class BackgroundStreamListener
     {
         //we run this listener on a background thread, listening for messages for the client
-        public void ClientRunMessageListener(TcpClient client, MainWindowViewModel mainWindowViewModel)
+        public void ClientRunMessageListener(NetworkStream netStream, TcpClient client, MainWindowViewModel mainWindowViewModel)
         {
-            NetworkStream netStream = client.GetStream();
-
                 while(netStream.CanRead)
                 {
                     byte[] bytes = new byte[client.ReceiveBufferSize];
