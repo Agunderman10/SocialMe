@@ -88,6 +88,13 @@
         public bool IsServer
         {
             get { return this._isServer; }
+            set
+            {
+                if(this._isServer != value)
+                {
+                    this._isServer = value;
+                }
+            }
         }
 
         public ICommand SendMessageCommand
@@ -163,6 +170,7 @@
         {
             server = new Server(UserDefinedPortForNewServer, this);
             server.StartServer();
+            this.IsServer = true;
         }
 
         //connects the client to the specified server
@@ -170,6 +178,7 @@
         {
             Client client = new Client(ConnectingServerIP, ConnectingServerPort, this);
             client.ConnectClient();
+            this.IsServer = false;
         }
 
         #endregion
