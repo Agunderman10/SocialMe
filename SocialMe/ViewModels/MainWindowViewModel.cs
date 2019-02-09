@@ -169,6 +169,10 @@
             {
                 client.SendMessage(UserMessage);
             }
+            else
+            {
+                return;
+            }
 
             //adds Me> prefix to messages
             string message = "Me> " + UserMessage;
