@@ -4,6 +4,7 @@
     using System.Net;
     using System.Net.Sockets;
     using System.Text;
+    using System.Threading;
 
     class Server
     {
@@ -33,8 +34,22 @@
             listener.Start();
 
             socket = listener.AcceptSocket();
-            _mainWindowViewModel.IsConnected();
-            netStream = new NetworkStream(socket);
+
+            if(socket.Connected)
+            {
+                _mainWindowViewModel.IsConnected();
+
+                netStream = new NetworkStream(socket);
+
+                //set background listener on background thread
+                BackgroundStreamListener backgroundStreamListener = new BackgroundStreamListener();
+                Thread thread = new Thread(() => backgroundStreamListener.ServerRunMessageListener(netStream, socket, _mainWindowViewModel));
+                thread.IsBackground = true;
+                thread.Start();
+
+
+            }
+
         }
 
         public void SendMessage(string message)
