@@ -18,11 +18,11 @@
                     string receivedMessage = Encoding.UTF8.GetString(bytes);
                     mainWindowViewModel.DisplayMessage(receivedMessage);
                 }
-               
-                mainWindowViewModel.DisplayErrorMessage();
-                client.Close();
-                netStream.Close();
-                return;            
+                
+            mainWindowViewModel.DisplayErrorMessage();
+            client.Close();
+            netStream.Close();
+            return;            
         }
     }
 }
