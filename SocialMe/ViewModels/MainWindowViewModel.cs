@@ -163,7 +163,7 @@
             {
                 server.SendMessage(UserMessage);
             }
-            else
+            else if(!IsServer)
             {
                 client.SendMessage(UserMessage);
             }
