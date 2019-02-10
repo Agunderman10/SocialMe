@@ -1,14 +1,18 @@
 ﻿namespace SocialMe
 {
+    using System.IO;
     using System.Net.Sockets;
     using System.Text;
+    using System.Windows;
 
     class BackgroundStreamListener
     {
         //we run this listener on a background thread, listening for messages for the client
         public void ClientRunMessageListener(NetworkStream netStream, TcpClient client, MainWindowViewModel mainWindowViewModel)
         {
-                while(netStream.CanRead)
+            while(netStream.CanRead)
+            {
+                try
                 {
                     byte[] bytes = new byte[client.ReceiveBufferSize];
                     netStream.Read(bytes, 0, (int)client.ReceiveBufferSize);
@@ -16,6 +20,12 @@
                     string receivedMessage = Encoding.UTF8.GetString(bytes);
                     mainWindowViewModel.DisplayMessage(receivedMessage);
                 }
+                catch(IOException e)
+                {
+                    MessageBox.Show(e.Message);
+                    return;
+                }
+            }
                 
             mainWindowViewModel.DisplayErrorMessage();
             client.Close();
