@@ -20,6 +20,8 @@
                     string receivedMessage = Encoding.UTF8.GetString(bytes);
                     mainWindowViewModel.DisplayMessage(receivedMessage);
                 }
+                //this exception is thrown if the server disconnects from the client, we show this to the client to notify 
+                //them of the disconnection
                 catch(IOException e)
                 {
                     MessageBox.Show(e.Message);
