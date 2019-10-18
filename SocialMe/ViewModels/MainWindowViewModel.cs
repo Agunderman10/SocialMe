@@ -1,5 +1,7 @@
 ﻿namespace SocialMe
 {
+
+    //importing system components
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
